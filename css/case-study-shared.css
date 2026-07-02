@@ -1,0 +1,774 @@
+/* ── CSS VARIABLES (mirrors main.css — loaded here for standalone case study pages) ── */
+:root {
+  --bg: #ffffff;
+  --bg2: #f8f9fa;
+  --bg3: #e8eaed;
+  --ink: #202124;
+  --ink2: #3c4043;
+  --muted: #5f6368;
+  --line: #f1f1f1;
+  --acc: #1a73e8;
+  --max: 720px;
+  --pad: 24px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ══════════════════════════════════════════════════════════════
+   CASE STUDY SHARED CSS
+   Shared by all 6 case study pages. Contains base resets,
+   typography, and all shared case study layout components.
+══════════════════════════════════════════════════════════════ */
+
+/* BASE RESET */
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Archivo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── CASE STUDY HEADER ───────────────────────────────────────── */
+.cs-header {
+  padding: 80px 0 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cs-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  color: var(--muted);
+  width: fit-content;
+}
+.cs-tag-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--acc);
+}
+.cs-h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.cs-h1 .dim { color: var(--muted); }
+.cs-sub {
+  font-size: 16px;
+  color: var(--ink2);
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  max-width: 560px;
+}
+.cs-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: 8px;
+}
+.cs-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cs-meta-lbl {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cs-meta-val {
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ── HERO VISUAL / MOCKUP ────────────────────────────────────── */
+.cs-hero-visual {
+  margin: 32px 0 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: transparent;
+}
+.mockup-bar {
+  display: flex;
+  gap: 6px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.mockup-bar span { width: 10px; height: 10px; border-radius: 50%; }
+.mockup-bar span:nth-child(1) { background: #ff5f57; }
+.mockup-bar span:nth-child(2) { background: #febc2e; }
+.mockup-bar span:nth-child(3) { background: #28c840; }
+.mockup-content {
+  display: flex;
+  height: 200px;
+  overflow: hidden;
+}
+.mockup-sidebar {
+  width: 160px; flex-shrink: 0;
+  border-right: 1px solid var(--line);
+  padding: 16px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mockup-sidebar::before,
+.mockup-sidebar::after {
+  content: '';
+  display: block;
+  height: 9px;
+  border-radius: 4px;
+  background: var(--bg3);
+}
+.mockup-sidebar::after { width: 55%; opacity: .5; }
+.mockup-main {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+.mockup-line { height: 9px; border-radius: 4px; background: var(--bg3); width: 80%; }
+.mockup-line.wide  { width: 100%; height: 13px; }
+.mockup-line.short { width: 38%; }
+.mockup-row { display: flex; gap: 10px; flex: 1; }
+.mockup-card {
+  flex: 1;
+  background: var(--bg3);
+  border-radius: 8px;
+  min-height: 60px;
+  border: 1px solid var(--line);
+}
+
+/* ── SECTION LABELS ──────────────────────────────────────────── */
+.cs-section { margin-bottom: 56px; }
+.sec-h2 {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sec-h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ── BODY TEXT ───────────────────────────────────────────────── */
+.cs-body {
+  font-size: 16px;
+  color: var(--ink2);
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+}
+.cs-body p { margin-bottom: 16px; }
+.cs-body p:last-child { margin-bottom: 0; }
+.cs-body strong { color: var(--ink2); font-weight: 500; }
+.cs-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cs-body li {
+  padding-left: 18px;
+  position: relative;
+}
+.cs-body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--acc);
+}
+
+/* ── PROBLEM LIST ────────────────────────────────────────────── */
+.problem-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+.problem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+}
+.problem-num {
+  font-size: 11px;
+  color: var(--acc);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  min-width: 20px;
+  margin-top: 1px;
+}
+.problem-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.problem-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── SOLUTION GRID ───────────────────────────────────────────── */
+.pill-list { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+.pill {
+  font-size: 12px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 5px 14px;
+}
+.solution-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+.solution-card {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.solution-card-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.solution-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: var(--bg3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.solution-icon svg {
+  width: 18px; height: 18px;
+  stroke: var(--ink2); fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.solution-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.solution-body {
+  padding: 16px 20px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── FLOW DIAGRAM ────────────────────────────────────────────── */
+.flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+  padding: 16px 20px;
+  background: var(--bg3);
+  border-radius: 10px;
+  font-size: 13px;
+}
+.flow-step {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 12px;
+  color: var(--ink2);
+  white-space: nowrap;
+}
+.flow-arrow { color: var(--muted); font-size: 12px; }
+
+/* ── STATS ───────────────────────────────────────────────────── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+.stat-box {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+.stat-big {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 4px;
+}
+.stat-desc { font-size: 12px; color: var(--muted); }
+
+/* ── QUOTE ───────────────────────────────────────────────────── */
+.cs-quote {
+  border-left: 2px solid rgba(255,255,255,0.12);
+  padding: 16px 20px;
+  margin: 24px 0;
+  background: transparent;
+  border-radius: 0 8px 8px 0;
+}
+.cs-quote p {
+  font-size: 16px;
+  color: var(--ink2);
+  line-height: 1.7;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+
+/* ── DIAGRAM (indent-specific, kept here for sharing) ────────── */
+.cs-diagram {
+  margin: 0 0 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: transparent;
+}
+.cs-diagram img { width: 100%; display: block; }
+.cs-diagram-caption {
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  letter-spacing: -0.01em;
+}
+
+/* ── PAGE NAVIGATION ─────────────────────────────────────────── */
+.page-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+  margin-top: 64px;
+}
+.page-nav.single-card {
+  grid-template-columns: 1fr;
+}
+.page-nav-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  text-decoration: none;
+  overflow: hidden;
+  min-height: 90px;
+}
+.page-nav-card:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+  background: var(--bg3);
+  transform: translateY(-2px);
+}
+.pnc-visual {
+  width: 100px;
+  height: 66px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  position: relative;
+}
+.pnc-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pnc-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.pnc-label {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+.pnc-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .page-nav {
+    grid-template-columns: 1fr;
+  }
+  .page-nav-card.next {
+    flex-direction: row-reverse;
+  }
+}
+
+/* ── CS CONTACT CTA ────────────────────────────────────────── */
+.cs-contact-cta {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 40px;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 20px;
+}
+.cs-contact-cta .cta-title {
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.cs-contact-cta .cta-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 520px;
+}
+.cs-contact-cta .cta-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+.cs-contact-cta .cta-email-btn:hover {
+  opacity: 0.85;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.cs-footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 48px;
+}
+.cs-footer-left { font-size: 12px; color: var(--muted); }
+
+/* ── ANIMATIONS ──────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp .6s cubic-bezier(.4,0,.2,1) forwards; opacity: 0; }
+.d1 { animation-delay: .05s; }
+.d2 { animation-delay: .13s; }
+.d3 { animation-delay: .22s; }
+.srv {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s cubic-bezier(.4,0,.2,1), transform .6s cubic-bezier(.4,0,.2,1);
+}
+.srv.vis { opacity: 1; transform: none; }
+
+/* ── MOBILE RESPONSIVE (content only) ───────────────────────── */
+@media (max-width: 680px) {
+  .cs-header  { padding: 32px 0 28px; }
+  .cs-meta    { gap: 16px; }
+  .stat-row   { grid-template-columns: 1fr 1fr; }
+  .page-nav   { flex-direction: column; }
+  .cs-h1      { font-size: clamp(24px, 7vw, 34px); }
+  .cs-sub     { font-size: 14px; }
+  .flow       { padding: 12px 14px; }
+  .solution-card-head { padding: 14px 16px; }
+  .solution-body      { padding: 12px 16px; }
+  .problem-item       { padding: 12px 14px; }
+}
+@media (max-width: 480px) {
+  .stat-row   { grid-template-columns: 1fr; }
+  .cs-h1      { font-size: clamp(22px, 8vw, 30px); }
+  .stat-big   { font-size: 24px; }
+  .page-nav-item { padding: 12px 14px; }
+}
+
+@media (max-width: 680px) {
+  .cs-header  { padding: 32px 0 28px; }
+  .cs-meta    { gap: 16px; }
+  .stat-row   { grid-template-columns: 1fr 1fr; }
+  .page-nav   { flex-direction: column; }
+  .cs-h1      { font-size: clamp(24px, 7vw, 34px); }
+  .cs-sub     { font-size: 14px; }
+}
+@media (max-width: 480px) {
+  .stat-row   { grid-template-columns: 1fr; }
+  .cs-h1      { font-size: clamp(22px, 8vw, 30px); }
+  .stat-big   { font-size: 24px; }
+  .page-nav-item { padding: 12px 14px; }
+}
+/* ── IMPACT GRID (indent case study - Expected Impact) ────── */
+.impact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin:20px 0;
+}
+.impact-card{
+  background: transparent;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.impact-icon{
+  width:36px;height:36px;
+  border-radius:8px;
+  background:var(--bg3);
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  color:var(--ink2);
+}
+.impact-title{
+  font-size:14px;font-weight:500;
+  color:var(--ink);letter-spacing:-0.02em;
+}
+.impact-items{
+  list-style:none;
+  display:flex;flex-direction:column;gap:8px;
+}
+.impact-items li{
+  font-size:13px;color:var(--muted);
+  line-height:1.5;letter-spacing:-0.01em;
+  padding-left:14px;position:relative;
+}
+.impact-items li::before{
+  content:'→';position:absolute;left:0;
+  color:var(--acc);font-size:10px;top:2px;
+}
+@media(max-width:680px){
+  .impact-grid{grid-template-columns:1fr}
+}
+
+
+/* ── CS HERO VISUAL — landscape 3:2 ────────────────────────── */
+.cs-hero-visual{
+  margin: 32px 0 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: transparent;
+  aspect-ratio: 3/2;
+  position: relative;
+}
+.cs-hero-visual img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+  position:absolute;inset:0;
+}
+/* ── CS DIAGRAM — same landscape ratio ──────────────────────── */
+.cs-diagram{
+  margin: 0 0 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: transparent;
+  aspect-ratio: 3/2;
+  position: relative;
+}
+.cs-diagram img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+  position:absolute;inset:0;
+}
+.cs-diagram-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--muted);
+  background: linear-gradient(to top, rgba(250,250,250,0.9), transparent);
+  letter-spacing: -0.01em;
+}
+
+/* ─── CASE STUDY HORIZONTAL STICKY TOC LAYOUT ─────────────────── */
+.cs-toc-horizontal {
+  position: sticky;
+  top: 70px; /* Sticky just below V1's nav (top: 20px + height: 50px) */
+  z-index: 90;
+  background: rgba(250, 250, 250, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  margin: 0 0 40px;
+  
+  /* Hidden by default, toggled via JS observer */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cs-toc-horizontal.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.cs-toc-list-horizontal {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: clamp(12px, 3vw, 24px);
+  max-width: 720px;
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0;
+}
+.cs-toc-list-horizontal::-webkit-scrollbar { display: none; }
+.cs-toc-link-horizontal {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 4px 0;
+  cursor: pointer;
+}
+.cs-toc-link-horizontal:hover {
+  color: var(--ink);
+}
+.cs-toc-link-horizontal::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%; height: 2px;
+  background: var(--acc);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cs-toc-link-horizontal.active {
+  color: var(--ink);
+  font-weight: 600;
+}
+.cs-toc-link-horizontal.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+.cs-section {
+  scroll-margin-top: 140px; /* Offset for sticky main nav + horizontal TOC */
+}
+
+/* ── PREMIUM SVG ICON ARROW ANIMATIONS ── */
+.icon-arrow-up-right, .icon-arrow-right, .icon-arrow-left, .icon-arrow-down {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+a:hover .icon-arrow-up-right {
+  transform: translate(2px, -2px);
+}
+a:hover .icon-arrow-right {
+  transform: translateX(3px);
+}
+a:hover .icon-arrow-left {
+  transform: translateX(-3px);
+}
+a:hover .icon-arrow-down {
+  transform: translateY(3px);
+}
+
+/* ── CURSOR-TRACKING HOVER TEXT SPOTLIGHT ── */
+p, li, .hero-desc, .about-desc, .sec-h1, .sec-h2, .cs-h1 {
+  position: relative;
+  z-index: 1;
+}
+p::before, li::before, .hero-desc::before, .about-desc::before, .sec-h1::before, .sec-h2::before, .cs-h1::before {
+  content: '';
+  position: absolute;
+  inset: -2px -6px;
+  border-radius: 4px;
+  background-image: radial-gradient(
+    circle 120px at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(37, 99, 235, 0.12) 0%,
+    rgba(37, 99, 235, 0.02) 60%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+p:hover::before, li:hover::before, .hero-desc:hover::before, .about-desc:hover::before, .sec-h1:hover::before, .sec-h2:hover::before, .cs-h1:hover::before {
+  opacity: 1;
+}
+
+
+
+
+
