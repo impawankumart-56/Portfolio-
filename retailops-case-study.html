@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- LIGHT THEME DISABLED <script>document.documentElement.setAttribute('data-theme','light');</script> -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dairy &amp; RetailOps Case Study | Pawan</title>
+<meta name="description" content="Case study: A ground-up UI redesign of a shipped SaaS product using Microsoft Fluent UI without removing a single feature.">
+<link rel="stylesheet" href="css/retailops-case-study.css">
+<link rel="stylesheet" href="css/case-study-shared.css">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-av">
+      <img src="images/Profile image 2.jpeg" alt="Pawan" loading="eager">
+    </div>
+    Pawan.
+  </a>
+  <div class="nav-links">
+    <a href="index.html#works" class="nav-link">Work</a>
+    <a href="index.html#about" class="nav-link">About</a>
+  </div>
+  <a href="mailto:impavankumart@gmail.com" class="nav-cta">Get in touch</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-overlay" id="navOverlay" role="dialog" aria-label="Navigation menu">
+  <div class="nav-ov-section">
+    <div class="nav-ov-label">Navigate</div>
+    <a href="index.html#works" class="nav-ov-link">Work <span class="nav-ov-arrow"><svg class="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; transition: transform 0.2s;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></a>
+    <a href="index.html#about" class="nav-ov-link">About <span class="nav-ov-arrow"><svg class="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; transition: transform 0.2s;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></a>
+  </div>
+  <div class="nav-ov-section">
+    <div class="nav-ov-label">Case Studies</div>
+    <a href="indent-case-study.html" class="nav-ov-link">Field Operations <span class="nav-ov-arrow"><svg class="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; transition: transform 0.2s;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></a>
+    <a href="godavaricuts-case-study.html" class="nav-ov-link">D2C Commerce <span class="nav-ov-arrow"><svg class="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; transition: transform 0.2s;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></a>
+    <a href="retailops-case-study.html" class="nav-ov-link" style="color:var(--acc)">Enterprise Ops Platform <span class="nav-ov-arrow"><svg class="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; transition: transform 0.2s;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></a>
+    <a href="manufacturing-case-study.html" class="nav-ov-link">Production Workflow <span class="nav-ov-arrow"><svg class="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; transition: transform 0.2s;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></a>
+    <a href="gateops-case-study.html" class="nav-ov-link">Industrial Gate Ops <span class="nav-ov-arrow"><svg class="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; transition: transform 0.2s;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></a>
+  </div>
+  <div class="nav-ov-cta">
+    <a href="mailto:impavankumart@gmail.com">Get in touch <svg class="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; transition: transform 0.2s;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+  </div>
+</div>
+<main>
+  <header class="cs-header">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- LIGHT THEME DISABLED <script>document.documentElement.setAttribute('data-theme','light');</script> -->
+    <div class="cs-tag fade-up d1">
+      <span class="cs-tag-dot"></span>
+      Case Study · Enterprise SaaS
+    </div>
+    <h1 class="cs-h1 fade-up d2">
+      Enterprise Operations<br>
+      <span class="dim">Platform</span>
+    </h1>
+    <p class="cs-sub fade-up d3">
+      Redesigning a large-scale SaaS platform across field operations, approvals, and asset workflows.
+    </p>
+    <div class="cs-meta fade-up d3">
+      <div class="cs-meta-item">
+        <span class="cs-meta-lbl">Platform</span>
+        <span class="cs-meta-val">Web & Mobile</span>
+      </div>
+      <div class="cs-meta-item">
+        <span class="cs-meta-lbl">Role</span>
+        <span class="cs-meta-val">UI/UX Designer</span>
+      </div>
+      <div class="cs-meta-item">
+        <span class="cs-meta-lbl">Duration</span>
+        <span class="cs-meta-val">2 Months</span>
+      </div>
+      <div class="cs-meta-item">
+        <span class="cs-meta-lbl">Status</span>
+        <span class="cs-meta-val">Under Review</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- COVER IMAGE -->
+  <div class="cs-hero-visual fade-up d3" style="margin-bottom:48px">
+    <img src="images/cover-enterprise.png" alt="Enterprise Operations Platform Banner" style="width:100%;display:block;border-radius:0" loading="lazy">
+  </div>
+
+  <!-- NDA Notice -->
+  <div class="nda-notice srv" style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:32px">
+    <span style="flex-shrink:0;font-size:15px;margin-top:1px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+    </span>
+    <span>Due to <strong style="color:var(--ink2);font-weight:700">NDA</strong> restrictions, actual product screens cannot be displayed. The content presented here is a conceptual representation of the product experience.</span>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="cs-toc-horizontal srv">
+    <div class="cs-toc-list-horizontal">
+      <span class="cs-toc-link-horizontal active" data-section="overview">Overview</span>
+      <span class="cs-toc-link-horizontal" data-section="problem">The Problem</span>
+      <span class="cs-toc-link-horizontal" data-section="scope">Scope</span>
+      <span class="cs-toc-link-horizontal" data-section="approach">Design Approach</span>
+      <span class="cs-toc-link-horizontal" data-section="principles">UX Principles</span>
+      <span class="cs-toc-link-horizontal" data-section="outcome">Outcome</span>
+      <span class="cs-toc-link-horizontal" data-section="reflection">Reflection</span>
+    </div>
+  </div>
+
+      <!-- OVERVIEW -->
+      <section class="cs-section srv" id="overview">
+        <div class="sec-h2">Overview</div>
+        <div class="cs-body">
+          <p>This project focused on redesigning a multi-module enterprise SaaS platform used for:</p>
+          <ul>
+            <li>field operations,</li>
+            <li>approvals,</li>
+            <li>asset management,</li>
+            <li>collections,</li>
+            <li>operational tracking,</li>
+            <li>and administrative workflows.</li>
+          </ul>
+          <p>The product was already live across multiple enterprise clients. The challenge was improving consistency and usability without affecting existing workflows.</p>
+        </div>
+      </section>
+
+      <!-- THE PROBLEM -->
+      <section class="cs-section srv" id="problem">
+        <div class="sec-h2">The Problem</div>
+        <div class="cs-body">
+          <p>The platform had expanded over time through multiple operational modules and client requirements.</p>
+          <p>This resulted in:</p>
+          <ul>
+            <li>inconsistent layouts,</li>
+            <li>repeated interaction patterns,</li>
+            <li>varying UI behaviors,</li>
+            <li>and higher cognitive effort for users moving between workflows.</li>
+          </ul>
+          <p>Operations teams were using the product daily in high-frequency environments where speed and clarity were critical.</p>
+        </div>
+      </section>
+
+      <!-- SCOPE -->
+      <section class="cs-section srv" id="scope">
+        <div class="sec-h2">Scope</div>
+        <div class="cs-body">
+          <p>The redesign included:</p>
+          <ul>
+            <li>~100 production screens,</li>
+            <li>operational workflows,</li>
+            <li>approval systems,</li>
+            <li>asset lifecycle flows,</li>
+            <li>and responsive web experiences.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- DESIGN APPROACH -->
+      <section class="cs-section srv" id="approach">
+        <div class="sec-h2">Design Approach</div>
+        <div class="solution-grid">
+
+          <div class="solution-card">
+            <div class="solution-card-head">
+              <div class="solution-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg></div>
+              <div class="solution-title">Design System Foundation</div>
+            </div>
+            <div class="solution-body">
+              Used Microsoft Fluent UI to establish: consistent layouts, reusable components, scalable spacing systems, and predictable interaction behavior. This created a stronger design foundation for future scaling.
+            </div>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-card-head">
+              <div class="solution-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+              <div class="solution-title">Workflow-Focused UX</div>
+            </div>
+            <div class="solution-body">
+              The redesign focused on: reducing navigation effort, improving workflow continuity, simplifying repetitive tasks, and improving operational visibility. The goal was to make the product feel more connected across modules.
+            </div>
+          </div>
+
+          <div class="solution-card" style="grid-column: 1 / -1">
+            <div class="solution-card-head">
+              <div class="solution-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+              <div class="solution-title">Simplified Enterprise Workflows</div>
+            </div>
+            <div class="solution-body">
+              Improved: approvals, asset requests, lifecycle tracking, collections, and operational visibility through clearer layouts and more structured interactions.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- UX PRINCIPLES APPLIED -->
+      <section class="cs-section srv" id="principles">
+        <div class="sec-h2">UX Principles Applied</div>
+        <div class="pill-list">
+          <span class="pill">Design System Thinking</span>
+          <span class="pill">Workflow Continuity</span>
+          <span class="pill">Operational Clarity</span>
+          <span class="pill">Reduce Cognitive Load</span>
+          <span class="pill">Scalable UX</span>
+        </div>
+      </section>
+
+      <!-- OUTCOME -->
+      <section class="cs-section srv" id="outcome">
+        <div class="sec-h2">Outcome</div>
+        <div class="cs-body">
+          <ul>
+            <li>~100 screens redesigned</li>
+            <li>Improved consistency across modules</li>
+            <li>Better workflow visibility</li>
+            <li>More scalable design structure established</li>
+          </ul>
+          <p style="margin-top: 16px;">The redesign is currently under review as part of a larger enterprise rollout.</p>
+        </div>
+      </section>
+
+      <!-- REFLECTION -->
+      <section class="cs-section srv" id="reflection">
+        <div class="sec-h2">Reflection</div>
+        <div class="cs-body">
+          <p>This project became a strong learning experience in designing production-scale SaaS systems.</p>
+          <p>It reinforced the importance of:</p>
+          <ul>
+            <li>scalable design thinking,</li>
+            <li>system consistency,</li>
+            <li>and designing for long-term operational growth rather than isolated screens.</li>
+          </ul>
+        </div>
+      </section>
+  <!-- WANNA KNOW MORE CTA -->
+  <section class="cs-contact-cta srv">
+    <h2 class="cta-title">Wanna know more?</h2>
+    <p class="cta-desc">Happy to discuss the redesign approach, design system thinking, enterprise workflows, or collaboration opportunities.</p>
+    <a href="mailto:impavankumart@gmail.com" class="cta-email-btn">Email Me <svg class="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-left: 4px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+  </section>
+
+  <!-- PAGE NAV -->
+  <div class="page-nav srv">
+    <!-- Previous Card: D2C -->
+    <a href="godavaricuts-case-study.html" class="page-nav-card prev">
+      <div class="pnc-visual">
+        <img src="images/cover-d2c.png" alt="D2C Cover" loading="lazy">
+      </div>
+      <div class="pnc-info">
+        <span class="pnc-label"><svg class="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 2px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Previous Work</span>
+        <div class="pnc-title">D2C Commerce Experience</div>
+      </div>
+    </a>
+    
+    <!-- Next Card: Production Ops -->
+    <a href="manufacturing-case-study.html" class="page-nav-card next">
+      <div class="pnc-info">
+        <span class="pnc-label">Next Work <svg class="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-left: 2px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+        <div class="pnc-title">Production Workflow System</div>
+      </div>
+      <div class="pnc-visual">
+        <img src="images/cover-production.png" alt="Production Cover" loading="lazy">
+      </div>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="cs-footer srv">
+    <span class="cs-footer-left">&copy; 2026 Pawan &middot; Hyderabad, India</span>
+  </div>
+</main>
+<script src="js/case-study.js" defer></script>
+<script>
+(function(){var s='light';document.documentElement.setAttribute('data-theme',s);})();
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.getElementById('themeToggle');
+  if(!btn)return;
+  function syncIcon(){
+    var t=document.documentElement.getAttribute('data-theme');
+    btn.innerHTML=t==='light'
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+  }
+  syncIcon();
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    var next=cur==='light'?'light':'light';
+    document.documentElement.setAttribute('data-theme',next);
+    localStorage.setItem('theme',next);
+    syncIcon();
+  });
+});
+</script><script>
+// Hamburger Menu Logic
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('navHamburger');
+  const overlay = document.getElementById('navOverlay');
+  if(hamburger && overlay) {
+    hamburger.addEventListener('click', function() {
+      const isOpen = overlay.classList.contains('open');
+      if(isOpen) {
+        overlay.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      } else {
+        overlay.classList.add('open');
+        hamburger.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  }
+});
+</script>
+<script>
+// Close mobile nav when a link inside is clicked
+document.addEventListener('DOMContentLoaded', function() {
+  var overlay = document.getElementById('navOverlay');
+  var hamburger = document.getElementById('navHamburger');
+  if(overlay) {
+    overlay.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        overlay.classList.remove('open');
+        if(hamburger) { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); }
+        document.body.style.overflow = '';
+      });
+    });
+  }
+});
+</script></body></html>
+
+
+
+
